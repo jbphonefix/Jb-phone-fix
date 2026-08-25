@@ -4,38 +4,412 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p>JB Phone Fix répare les iPhone, Samsung, Google Pixel et autres téléphones Android à Longueuil et dans les environs. Écrans, batteries, connecteurs de charge, caméras, microphones, haut-parleurs et plus.</p>
+  <title>JB Phone Fix | Réparation de téléphones à Longueuil</title>
 
-<meta name="description" content="JB Phone Fix — réparation de téléphones à Longueuil et environs. Écrans, batteries, connecteurs de charge, caméras, microphones et haut-parleurs pour iPhone, Samsung, Google Pixel et Android.">
+  <meta name="description" content="JB Phone Fix — réparation de téléphones à Longueuil et environs. Écrans, batteries, connecteurs de charge, caméras, microphones et haut-parleurs pour iPhone, Samsung, Google Pixel et Android.">
 
   <meta name="google-site-verification" content="qgN8515kEIYj8dkAuo72MYEGpoMBs4vPex1JEFwDJM8">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;color:#171717;background:#f7f7f7;line-height:1.6}
-    header{background:#111;color:white;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #0002}
-    .nav{max-width:1100px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:24px;font-weight:800}.logo span{color:#4da3ff}
-    nav a{color:white;text-decoration:none;margin-left:18px;font-weight:600}
-    .hero{background:linear-gradient(135deg,#111 0%,#202a38 100%);color:white;padding:85px 20px}
-    .hero-inner{max-width:1100px;margin:auto}
-    .hero h1{font-size:clamp(38px,7vw,68px);line-height:1.05;margin-bottom:20px}
-    .hero p{font-size:20px;max-width:650px;color:#ddd;margin-bottom:30px}
-    .btn{display:inline-block;background:#4da3ff;color:#07111c;padding:14px 23px;border-radius:9px;text-decoration:none;font-weight:800;margin-right:10px}
-    .btn.alt{background:white}
-    section{max-width:1100px;margin:auto;padding:65px 20px}
-    h2{font-size:36px;margin-bottom:12px}.intro{color:#666;margin-bottom:30px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:white;padding:25px;border-radius:15px;box-shadow:0 5px 22px #0000000d;border:1px solid #eee}
-    .icon{font-size:35px;margin-bottom:8px}.card h3{margin-bottom:7px}
-    .why{background:#111;color:white;max-width:none}.why-inner{max-width:1100px;margin:auto;padding:65px 20px}
-    .why .cards{margin-top:28px}.why .card{background:#1e1e1e;border-color:#333;color:white}
-    .contact{background:white;border-radius:18px;padding:35px;box-shadow:0 5px 22px #0000000d}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-    .contact a{color:#1675d1;font-weight:700}
-    footer{background:#111;color:#aaa;text-align:center;padding:25px 20px}
-    @media(max-width:750px){nav{display:none}.cards,.contact-grid{grid-template-columns:1fr}.hero{padding:65px 20px}h2{font-size:30px}}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: #0b0d10;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 18px #0004;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #4da3ff;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 22px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #4da3ff;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, #4da3ff33, transparent 30%),
+        linear-gradient(135deg, #090b0e, #1b2634);
+      color: white;
+      padding: 95px 20px 90px;
+    }
+
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #4da3ff18;
+      border: 1px solid #4da3ff55;
+      color: #8bc9ff;
+      padding: 7px 13px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(42px, 8vw, 75px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: #4da3ff;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 20px;
+      color: #d7dbe0;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      background: #4da3ff;
+      color: #06101a;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.alt {
+      background: white;
+      color: #111;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .section-label {
+      color: #1675d1;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .intro {
+      color: #666;
+      max-width: 760px;
+      margin-bottom: 35px;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 27px;
+      border-radius: 18px;
+      border: 1px solid #e7e9ed;
+      box-shadow: 0 8px 30px #0000000a;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px #00000012;
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #4da3ff12;
+      font-size: 27px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 7px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    .locations {
+      background: #eef6ff;
+      border-top: 1px solid #dceeff;
+      border-bottom: 1px solid #dceeff;
+      max-width: none;
+    }
+
+    .locations-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .location-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .location {
+      background: white;
+      border: 1px solid #dce6ef;
+      border-radius: 50px;
+      padding: 9px 15px;
+      font-weight: 700;
+      color: #24415a;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .ba-card {
+      min-height: 280px;
+      border-radius: 22px;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .ba-before {
+      background:
+        linear-gradient(#0005, #0007),
+        radial-gradient(circle at 60% 40%, #3d3d3d, #111);
+      color: white;
+    }
+
+    .ba-after {
+      background:
+        linear-gradient(#0003, #0005),
+        radial-gradient(circle at 60% 40%, #31465a, #0d1722);
+      color: white;
+    }
+
+    .ba-phone {
+      position: absolute;
+      width: 115px;
+      height: 205px;
+      border: 6px solid #292d33;
+      border-radius: 22px;
+      left: 50%;
+      top: 28px;
+      transform: translateX(-50%) rotate(-7deg);
+      background: #080a0d;
+      box-shadow: 0 18px 40px #0008;
+    }
+
+    .ba-after .ba-phone {
+      transform: translateX(-50%) rotate(7deg);
+    }
+
+    .crack {
+      position: absolute;
+      inset: 15px;
+      background:
+        linear-gradient(55deg, transparent 45%, #fff9 46%, transparent 48%),
+        linear-gradient(125deg, transparent 50%, #fff8 51%, transparent 53%),
+        linear-gradient(15deg, transparent 60%, #fff7 61%, transparent 63%);
+    }
+
+    .ba-label {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ba-label small {
+      display: inline-block;
+      background: #0009;
+      padding: 5px 9px;
+      border-radius: 30px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .why {
+      background: #0b0d10;
+      color: white;
+      max-width: none;
+    }
+
+    .why-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 75px 20px;
+    }
+
+    .why .intro {
+      color: #bfc5cc;
+    }
+
+    .why .card {
+      background: #15181d;
+      border-color: #2b3037;
+      color: white;
+    }
+
+    .why .card p {
+      color: #b8bec6;
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 22px;
+      padding: 35px;
+      box-shadow: 0 8px 30px #0000000b;
+      border: 1px solid #e7e9ed;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .contact-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .contact-item a {
+      color: #1675d1;
+      font-weight: 800;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #101820, #1d3448);
+      color: white;
+      border-radius: 24px;
+      padding: 45px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .cta p {
+      color: #cbd3db;
+      margin-top: 7px;
+    }
+
+    footer {
+      background: #080a0d;
+      color: #9299a2;
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    @media(max-width: 750px) {
+      nav {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .before-after,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .cta {
+        display: block;
+      }
+
+      .cta .btn {
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -44,8 +418,10 @@
 <header>
   <div class="nav">
     <div class="logo">JB <span>Phone Fix</span></div>
+
     <nav>
       <a href="#services">Services</a>
+      <a href="#avant-apres">Avant / Après</a>
       <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -56,72 +432,280 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <h1>Réparation de téléphones à Longueuil</h1>
-      <p>Réparation de téléphones et appareils électroniques à prix compétitifs. Écrans, batteries, connecteurs, caméras et plus.</p>
-      <a class="btn" href="#contact">Demander une soumission</a>
-      <a class="btn alt" href="#services">Voir les services</a>
+
+      <div class="badge">📍 Longueuil et environs</div>
+
+      <h1>
+        Réparation de téléphones
+        <span>à Longueuil</span>
+      </h1>
+
+      <p>
+        JB Phone Fix répare les iPhone, Samsung, Google Pixel et autres
+        téléphones Android à Longueuil et dans les environs.
+        Écrans, batteries, connecteurs de charge, caméras, microphones,
+        haut-parleurs et plus.
+      </p>
+
+      <div class="buttons">
+        <a class="btn" href="#contact">📲 Demander une soumission</a>
+        <a class="btn alt" href="#services">Voir les services</a>
+      </div>
+
     </div>
   </section>
+
 
   <section id="services">
-    <h2>Nos services</h2>
-<p class="intro">Réparations pour iPhone, Samsung, Google Pixel, Motorola et plusieurs autres modèles. JB Phone Fix dessert Longueuil, Saint-Hubert, LeMoyne, Brossard, Boucherville, Chambly, La Prairie et Montréal.</p>
+
+    <div class="section-label">Nos services</div>
+
+    <h2>Réparation de téléphones et appareils électroniques</h2>
+
+    <p class="intro">
+      Des réparations pour iPhone, Samsung, Google Pixel, Motorola
+      et plusieurs autres modèles.
+    </p>
 
     <div class="cards">
-      <div class="card"><div class="icon">📱</div><h3>Écrans</h3><p>Remplacement d'écrans brisés ou défectueux.</p></div>
-      <div class="card"><div class="icon">🔋</div><h3>Batteries</h3><p>Remplacement de batteries qui se déchargent trop rapidement.</p></div>
-      <div class="card"><div class="icon">🔌</div><h3>Connecteurs</h3><p>Problèmes de recharge, ports endommagés et connectique.</p></div>
-      <div class="card"><div class="icon">📷</div><h3>Caméras</h3><p>Réparation ou remplacement de caméras défectueuses.</p></div>
-      <div class="card"><div class="icon">🔊</div><h3>Audio & micro</h3><p>Problèmes de haut-parleur, microphone ou écouteur.</p></div>
-      <div class="card"><div class="icon">🛠️</div><h3>Autres réparations</h3><p>Un autre problème? Écrivez-nous et nous regarderons ce qui est possible.</p></div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Réparation d'écrans</h3>
+        <p>
+          Remplacement d'écrans brisés, fissurés ou défectueux.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔋</div>
+        <h3>Remplacement de batterie</h3>
+        <p>
+          Remplacement de batteries qui se déchargent trop rapidement.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔌</div>
+        <h3>Connecteur de charge</h3>
+        <p>
+          Problèmes de recharge, ports endommagés et connectique.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📷</div>
+        <h3>Réparation de caméra</h3>
+        <p>
+          Réparation ou remplacement de caméras défectueuses.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔊</div>
+        <h3>Microphone et haut-parleur</h3>
+        <p>
+          Problèmes de son, microphone, écouteur ou haut-parleur.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Autres réparations</h3>
+        <p>
+          Un autre problème? Contactez-nous pour voir ce qui est possible.
+        </p>
+      </div>
+
     </div>
+
   </section>
 
-  <div class="why">
-    <div class="why-inner" id="apropos">
-      <h2>Pourquoi JB Phone Fix?</h2>
-      <p>Un service simple, honnête et accessible pour remettre vos appareils en état.</p>
 
-      <div class="cards">
-        <div class="card"><h3>💰 Prix compétitifs</h3><p>Nous cherchons des solutions adaptées à votre budget.</p></div>
-        <div class="card"><h3>🔧 Service personnalisé</h3><p>Chaque appareil est évalué selon son problème.</p></div>
-        <div class="card"><h3>📲 Plusieurs marques</h3><p>iPhone, Samsung, Google, Motorola et plus.</p></div>
+  <div class="locations">
+
+    <div class="locations-inner">
+
+      <div class="section-label">Zone desservie</div>
+
+      <h2>Réparation de téléphones dans les environs</h2>
+
+      <p class="intro">
+        JB Phone Fix dessert Longueuil et plusieurs secteurs
+        de la Rive-Sud et de Montréal.
+      </p>
+
+      <div class="location-list">
+        <span class="location">Longueuil</span>
+        <span class="location">Saint-Hubert</span>
+        <span class="location">LeMoyne</span>
+        <span class="location">Brossard</span>
+        <span class="location">Boucherville</span>
+        <span class="location">Chambly</span>
+        <span class="location">La Prairie</span>
+        <span class="location">Montréal</span>
       </div>
+
     </div>
+
   </div>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p class="intro">Contactez-nous pour connaître le prix de votre réparation.</p>
 
-    <div class="contact">
-      <div class="contact-grid">
+  <section id="avant-apres">
 
-        <div>
-          <h3>📞 Téléphone</h3>
-          <p><a href="tel:4509446641">VOTRE NUMÉRO</a></p>
+    <div class="section-label">Avant / Après</div>
+
+    <h2>Redonner une deuxième vie à votre téléphone</h2>
+
+    <p class="intro">
+      Découvrez la différence entre un appareil endommagé et
+      un appareil remis en état.
+    </p>
+
+    <div class="before-after">
+
+      <div class="ba-card ba-before">
+
+        <div class="ba-phone">
+          <div class="crack"></div>
         </div>
 
-        <div>
-          <h3>✉️ Courriel</h3>
-          <p><a href="mailto:jbphonefix@hotmail.com">jbphonefix@hotmail.com</a></p>
-        </div>
-
-        <div>
-          <h3>📍 Secteur</h3>
-          <p>Longueuil et environs</p>
-        </div>
-
-        <div>
-          <h3>📘 Facebook</h3>
-          <p><a href="https://www.facebook.com/share/19CvG3qKrU/?mibextid=wwXIfr">Notre page Facebook</a></p>
+        <div class="ba-label">
+          <small>AVANT</small>
+          <h3>Écran endommagé</h3>
         </div>
 
       </div>
+
+
+      <div class="ba-card ba-after">
+
+        <div class="ba-phone"></div>
+
+        <div class="ba-label">
+          <small>APRÈS</small>
+          <h3>Appareil remis en état</h3>
+        </div>
+
+      </div>
+
     </div>
+
+  </section>
+
+
+  <div class="why">
+
+    <div class="why-inner" id="apropos">
+
+      <div class="section-label">Pourquoi JB Phone Fix?</div>
+
+      <h2>Simple. Honnête. Accessible.</h2>
+
+      <p class="intro">
+        Un service personnalisé pour remettre vos appareils
+        en état avec des solutions adaptées à votre budget.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>💰 Prix compétitifs</h3>
+          <p>
+            Nous cherchons des solutions adaptées à votre budget.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🔧 Service personnalisé</h3>
+          <p>
+            Chaque appareil est évalué selon son problème.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📲 Plusieurs marques</h3>
+          <p>
+            iPhone, Samsung, Google Pixel, Motorola et plus.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <section id="contact">
+
+    <div class="cta">
+
+      <div>
+        <div class="section-label">Contact</div>
+
+        <h2>Votre téléphone a un problème?</h2>
+
+        <p>
+          Contactez JB Phone Fix pour connaître le prix
+          de votre réparation.
+        </p>
+      </div>
+
+      <a class="btn" href="mailto:jbphonefix@hotmail.com">
+        ✉️ Nous écrire
+      </a>
+
+    </div>
+
+    <br><br>
+
+    <div class="contact-box">
+
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <h3>📞 Téléphone</h3>
+          <p>
+            <a href="tel:4509446641">
+              (450) 944-6641
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>✉️ Courriel</h3>
+          <p>
+            <a href="mailto:jbphonefix@hotmail.com">
+              jbphonefix@hotmail.com
+            </a>
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>📍 Secteur</h3>
+          <p>
+            Longueuil et environs
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>📘 Facebook</h3>
+          <p>
+            <a href="https://www.facebook.com/share/19CvG3qKrU/?mibextid=wwXIfr" target="_blank" rel="noopener">
+              Notre page Facebook
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
   </section>
 
 </main>
+
 
 <footer>
   © 2026 JB Phone Fix — Tous droits réservés.
