@@ -57,6 +57,17 @@ font-size: 15px;
 nav a:hover {
 color: #4da3ff;
 }
+nav a.nav-rdv {
+background: #a3f01c;
+color: #000;
+padding: 9px 16px;
+border-radius: 8px;
+font-weight: 800;
+}
+nav a.nav-rdv:hover {
+color: #000;
+filter: brightness(.9);
+}
 .hero {
 background:
 radial-gradient(circle at 85% 20%, #4da3ff33, transparent 30%),
@@ -119,6 +130,10 @@ transform: translateY(-2px);
 .btn.alt {
 background: white;
 color: #111;
+}
+.btn.rdv {
+background: #a3f01c;
+color: #000;
 }
 section {
 max-width: 1150px;
@@ -375,6 +390,11 @@ gap: 25px;
 color: #cbd3db;
 margin-top: 7px;
 }
+.cta-btns {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
 footer {
 background: #080a0d;
 color: #9299a2;
@@ -382,8 +402,13 @@ text-align: center;
 padding: 28px 20px;
 }
 @media(max-width: 750px) {
-nav {
+nav a:not(.nav-rdv) {
 display: none;
+}
+nav a.nav-rdv {
+margin-left: 0;
+padding: 8px 12px;
+font-size: 14px;
 }
 .cards {
 grid-template-columns: 1fr;
@@ -401,7 +426,7 @@ letter-spacing: -1px;
 .cta {
 display: block;
 }
-.cta .btn {
+.cta .cta-btns {
 margin-top: 20px;
 }
 }
@@ -416,6 +441,7 @@ margin-top: 20px;
 <a href="#avant-apres">Avant / Après</a>
 <a href="#apropos">À propos</a>
 <a href="#contact">Contact</a>
+<a class="nav-rdv" href="rdv.html">Prendre rendez-vous</a>
 </nav>
 </div>
 </header>
@@ -435,6 +461,7 @@ téléphones Android à Longueuil et dans les environs.
 haut-parleurs et plus.
 </p>
 <div class="buttons">
+<a class="btn rdv" href="rdv.html">📅 Prendre rendez-vous</a>
 <a class="btn" href="#contact">📲 Demander une soumission</a>
 <a class="btn alt" href="#services">Voir les services</a>
 </div>
@@ -619,9 +646,12 @@ Contactez JB Phone Fix pour connaître le prix
 de votre réparation.
 </p>
 </div>
+<div class="cta-btns">
+<a class="btn rdv" href="rdv.html">📅 Prendre rendez-vous</a>
 <a class="btn" href="mailto:jbphonefix@hotmail.com">
 ✉️ Nous écrire
 </a>
+</div>
 </div>
 <br><br>
 <div class="contact-box">
@@ -709,4 +739,3 @@ if (e.key === 'Escape') closeBaModal();
 </script>
 </body>
 </html>
-
