@@ -52,13 +52,13 @@ button.go:active{filter:brightness(.9)}
   <h2>Prendre <span>rendez-vous</span></h2>
   <label for="date">Date du rendez-vous</label>
   <input type="date" id="date" required>
-  <div class="hint" id="dlong">Disponible les lundis, mardis et mercredis.</div>
+  <div class="hint" id="dlong">Ouvert du lundi au samedi (fermé le dimanche).</div>
 
   <div class="lbl">Heure</div>
   <div class="slots" id="slots"></div>
 
   <label for="brand">Marque</label>
-  <select id="brand"><option value="iPhone">iPhone</option><option value="Samsung">Samsung</option></select>
+  <select id="brand"><option value="iPhone">iPhone</option><option value="Samsung">Samsung</option><option value="Google Pixel">Google Pixel</option><option value="Motorola">Motorola</option></select>
 
   <label for="model">Modèle (du plus ancien au plus récent)</label>
   <select id="model" required></select>
@@ -101,22 +101,22 @@ button.go:active{filter:brightness(.9)}
 </main>
 <script>
 var M={iPhone:["iPhone 6","iPhone 6 Plus","iPhone 6s","iPhone 6s Plus","iPhone SE (2016)","iPhone 7","iPhone 7 Plus","iPhone 8","iPhone 8 Plus","iPhone X","iPhone XR","iPhone XS","iPhone XS Max","iPhone 11","iPhone 11 Pro","iPhone 11 Pro Max","iPhone SE (2020)","iPhone 12 mini","iPhone 12","iPhone 12 Pro","iPhone 12 Pro Max","iPhone 13 mini","iPhone 13","iPhone 13 Pro","iPhone 13 Pro Max","iPhone SE (2022)","iPhone 14","iPhone 14 Plus","iPhone 14 Pro","iPhone 14 Pro Max","iPhone 15","iPhone 15 Plus","iPhone 15 Pro","iPhone 15 Pro Max","iPhone 16","iPhone 16 Plus","iPhone 16 Pro","iPhone 16 Pro Max","iPhone 16e","iPhone 17","iPhone Air","iPhone 17 Pro","iPhone 17 Pro Max"],
-Samsung:["Galaxy S6","Galaxy S6 Edge","Galaxy S7","Galaxy S7 Edge","Galaxy S8","Galaxy S8+","Galaxy Note 8","Galaxy S9","Galaxy S9+","Galaxy Note 9","Galaxy S10e","Galaxy S10","Galaxy S10+","Galaxy Note 10","Galaxy Note 10+","Galaxy S20","Galaxy S20+","Galaxy S20 Ultra","Galaxy Note 20","Galaxy Note 20 Ultra","Galaxy S21","Galaxy S21+","Galaxy S21 Ultra","Galaxy S22","Galaxy S22+","Galaxy S22 Ultra","Galaxy S23","Galaxy S23+","Galaxy S23 Ultra","Galaxy S24","Galaxy S24+","Galaxy S24 Ultra","Galaxy S25","Galaxy S25+","Galaxy S25 Ultra","Galaxy S26","Galaxy S26+","Galaxy S26 Ultra"]};
+Samsung:["Galaxy S6","Galaxy S6 Edge","Galaxy S7","Galaxy S7 Edge","Galaxy S8","Galaxy S8+","Galaxy Note 8","Galaxy S9","Galaxy S9+","Galaxy Note 9","Galaxy S10e","Galaxy S10","Galaxy S10+","Galaxy Note 10","Galaxy Note 10+","Galaxy S20","Galaxy S20+","Galaxy S20 Ultra","Galaxy Note 20","Galaxy Note 20 Ultra","Galaxy S21","Galaxy S21+","Galaxy S21 Ultra","Galaxy S22","Galaxy S22+","Galaxy S22 Ultra","Galaxy S23","Galaxy S23+","Galaxy S23 Ultra","Galaxy S24","Galaxy S24+","Galaxy S24 Ultra","Galaxy S25","Galaxy S25+","Galaxy S25 Ultra","Galaxy S26","Galaxy S26+","Galaxy S26 Ultra","Galaxy A10", "Galaxy A20", "Galaxy A50", "Galaxy A51", "Galaxy A71", "Galaxy A12", "Galaxy A21s", "Galaxy A32", "Galaxy A52", "Galaxy A72", "Galaxy A13", "Galaxy A22", "Galaxy A23", "Galaxy A33", "Galaxy A53", "Galaxy A14", "Galaxy A34", "Galaxy A54", "Galaxy A15", "Galaxy A25", "Galaxy A35", "Galaxy A55", "Galaxy A16", "Galaxy A26", "Galaxy A36", "Galaxy A56"],"Google Pixel":["Pixel 3", "Pixel 3 XL", "Pixel 3a", "Pixel 3a XL", "Pixel 4", "Pixel 4 XL", "Pixel 4a", "Pixel 4a (5G)", "Pixel 5", "Pixel 5a", "Pixel 6", "Pixel 6 Pro", "Pixel 6a", "Pixel 7", "Pixel 7 Pro", "Pixel 7a", "Pixel Fold", "Pixel 8", "Pixel 8 Pro", "Pixel 8a", "Pixel 9", "Pixel 9 Pro", "Pixel 9 Pro XL", "Pixel 9 Pro Fold", "Pixel 9a", "Pixel 10", "Pixel 10 Pro", "Pixel 10 Pro XL", "Pixel 10 Pro Fold"],Motorola:["Moto G7 Play", "Moto G7", "Moto G7 Power", "Moto G8 Play", "Moto G8", "Moto G8 Power", "Moto G9 Play", "Moto G9 Power", "Moto G10", "Moto G20", "Moto G30", "Moto G50", "Moto G Power (2021)", "Moto G Stylus (2021)", "Moto G Power (2022)", "Moto G Play (2023)", "Moto G Stylus 5G (2023)", "Moto G Power (2024)", "Moto G Play (2024)", "Moto G (2024)", "Moto G Stylus 5G (2024)", "Moto G (2025)", "Moto G Power (2025)", "Moto G Play (2025)"]};
 var R=["Changement d'écran","Changement de batterie","Changement de port de connexion","Changement de caméra arrière","Changement de caméra avant","Changement de vitre arrière","Haut-parleur / microphone","Dommage causé par l'eau","Déblocage et optimisation","Autre / diagnostic"];
-var H=["9 h","10 h","11 h","12 h","13 h","14 h","15 h","16 h","17 h"],hour="";
+var hour="";
 var $=function(i){return document.getElementById(i)};
 function fill(){var b=$("brand").value;$("model").innerHTML=M[b].map(function(m){return"<option>"+m+"</option>"}).join("")+"<option>Autre modèle</option>"}
 $("brand").onchange=fill;fill();
 $("rep").innerHTML=R.map(function(r){return"<option>"+r+"</option>"}).join("");
-$("slots").innerHTML=H.map(function(h){return'<div class="slot" data-h="'+h+'">'+h+'</div>'}).join("");
+function slots(w){hour="";if(w<0){$("slots").innerHTML='<div class="hint" style="grid-column:1/-1">Choisissez d\'abord une date.</div>';return}var c=(w==4||w==5)?18:17,a=[];for(var h=9;h<c;h++)a.push(h+" h");$("slots").innerHTML=a.map(function(h){return'<div class="slot" data-h="'+h+'">'+h+'</div>'}).join("")}slots(-1);
 $("slots").onclick=function(e){var t=e.target;if(!t.dataset.h)return;hour=t.dataset.h;[].forEach.call(document.querySelectorAll(".slot"),function(s){s.classList.toggle("on",s===t)})};
 var d=new Date(),p=function(n){return String(n).padStart(2,"0")};
 $("date").min=d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate());
 function longDate(v){var x=new Date(v+"T12:00:00");return x.toLocaleDateString("fr-CA",{weekday:"long",day:"numeric",month:"long",year:"numeric"})}
 $("date").onchange=function(){var v=this.value;if(!v){return}
  var w=new Date(v+"T12:00:00").getDay();
- if(w<1||w>3){$("dlong").textContent="Disponible seulement les lundis, mardis et mercredis. Choisissez un autre jour.";this.value="";return}
- $("dlong").textContent=longDate(v)};
+ if(w===0){$("dlong").textContent="Fermé le dimanche. Choisissez un autre jour.";this.value="";slots(-1);return}
+ $("dlong").textContent=longDate(v);slots(w)};
 $("f").onsubmit=function(e){e.preventDefault();
  if(!$("date").value||!hour){$("err").textContent="Choisissez une date et une heure.";return}
  $("err").textContent="";
